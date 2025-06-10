@@ -1,0 +1,15 @@
+[package]
+name = "weight_backtest_pyo3"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "weight_backtest_pyo3"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module", "anyhow"] }
+chrono = "0.4"
+rayon = "1.8"
+serde = { version = "1.0", features = ["derive"] }
+polars = { version = "0.36", features = ["lazy", "temporal", "strings", "object", "serde"] }
